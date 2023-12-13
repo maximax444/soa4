@@ -1,0 +1,124 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://com/example/vehicleService/catalog"
+           targetNamespace="http://com/example/vehicleService/catalog"
+           elementFormDefault="qualified">
+
+    <xs:element name="createVehicleDtoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="coordinates" type="tns:CoordinatesRequestDto"/>
+                <xs:element name="creationDate" type="xs:string"/>
+                <xs:element name="enginePower" type="xs:double"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="fuelType" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createVehicleDtoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="1"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                <xs:element name="creationDate" type="xs:string"/>
+                <xs:element name="enginePower" type="xs:double"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="fuelType" type="xs:string"/>
+                <xs:element name="numberOfWheels" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateVehicleDtoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="1"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="coordinates" type="tns:CoordinatesRequestDto"/>
+                <xs:element name="creationDate" type="xs:string"/>
+                <xs:element name="enginePower" type="xs:double"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="fuelType" type="xs:string"/>
+                <xs:element name="numberOfWheels" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="updateVehicleDtoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="1"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                <xs:element name="creationDate" type="xs:string"/>
+                <xs:element name="enginePower" type="xs:double"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="fuelType" type="xs:string"/>
+                <xs:element name="numberOfWheels" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteVehicleRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="deleteVehicleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="1"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                <xs:element name="creationDate" type="xs:string"/>
+                <xs:element name="enginePower" type="xs:double"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="fuelType" type="xs:string"/>
+                <xs:element name="numberOfWheels" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getVehicleRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getVehicleResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long" minOccurs="1"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                <xs:element name="creationDate" type="xs:string"/>
+                <xs:element name="enginePower" type="xs:double"/>
+                <xs:element name="type" type="xs:string"/>
+                <xs:element name="fuelType" type="xs:string"/>
+                <xs:element name="numberOfWheels" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="CoordinatesRequestDto">
+        <xs:sequence>
+            <xs:element name="x" type="xs:string" minOccurs="0"/>
+            <xs:element name="y" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CoordinatesResponseDto">
+        <xs:sequence>
+            <xs:element name="x" type="xs:long" minOccurs="0"/>
+            <xs:element name="y" type="xs:double" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

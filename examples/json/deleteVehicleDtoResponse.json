@@ -1,0 +1,13 @@
+{
+  "id": 0,
+  "name": "",
+  "coordinates": {
+    "x": 0.00,
+    "y": 0.00
+  },
+  "creationDate": 1702266014745,
+  "enginePower": 0.00,
+  "type": "HELICOPTER",
+  "fuelType": "ELECTRICITY",
+  "numberOfWheels": 0
+}

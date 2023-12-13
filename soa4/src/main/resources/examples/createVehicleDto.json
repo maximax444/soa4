@@ -1,0 +1,11 @@
+{
+  "name": "Test",
+  "coordinates": {
+    "x": 0.00,
+    "y": 0.00
+  },
+  "creationDate": "2023-09-26T16:58:47.483635Z",
+  "enginePower": 12.00,
+  "type": "HELICOPTER",
+  "fuelType": "DIESEL"
+}

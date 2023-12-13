@@ -1,0 +1,304 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://com/example/vehicleService/catalog"
+                  targetNamespace="http://com/example/vehicleService/catalog">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+                   targetNamespace="http://com/example/vehicleService/catalog">
+            <xs:element name="createVehicleDtoRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="coordinates" type="tns:CoordinatesRequestDto"/>
+                        <xs:element name="creationDate" type="xs:string"/>
+                        <xs:element name="enginePower" type="xs:double"/>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="fuelType" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="createVehicleDtoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                        <xs:element name="creationDate" type="xs:string"/>
+                        <xs:element name="enginePower" type="xs:double"/>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="fuelType" type="xs:string"/>
+                        <xs:element name="numberOfWheels" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateVehicleDtoRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="coordinates" type="tns:CoordinatesRequestDto"/>
+                        <xs:element name="creationDate" type="xs:string"/>
+                        <xs:element name="enginePower" type="xs:double"/>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="fuelType" type="xs:string"/>
+                        <xs:element name="numberOfWheels" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="updateVehicleDtoResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                        <xs:element name="creationDate" type="xs:string"/>
+                        <xs:element name="enginePower" type="xs:double"/>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="fuelType" type="xs:string"/>
+                        <xs:element name="numberOfWheels" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteVehicleRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteVehicleResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                        <xs:element name="creationDate" type="xs:string"/>
+                        <xs:element name="enginePower" type="xs:double"/>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="fuelType" type="xs:string"/>
+                        <xs:element name="numberOfWheels" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteVehicleByTypeRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="type" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="deleteVehicleByTypeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="code" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getVehicleRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="id" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getVehicleResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="id" type="xs:long"/>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="coordinates" type="tns:CoordinatesResponseDto"/>
+                        <xs:element name="creationDate" type="xs:string"/>
+                        <xs:element name="enginePower" type="xs:double"/>
+                        <xs:element name="type" type="xs:string"/>
+                        <xs:element name="fuelType" type="xs:string"/>
+                        <xs:element name="numberOfWheels" type="xs:long"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getVehiclesSumEnginePowerRequest">
+                <xs:complexType>
+                    <xs:sequence></xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getVehiclesSumEnginePowerResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="result" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getVehiclesAverageEnginePowerRequest">
+                <xs:complexType>
+                    <xs:sequence></xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getVehiclesAverageEnginePowerResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="1" name="result" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="CoordinatesRequestDto">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="x" type="xs:string"/>
+                    <xs:element minOccurs="0" name="y" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CoordinatesResponseDto">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="x" type="xs:long"/>
+                    <xs:element minOccurs="0" name="y" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="createVehicleDtoRequest">
+        <wsdl:part element="tns:createVehicleDtoRequest" name="createVehicleDtoRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVehiclesAverageEnginePowerRequest">
+        <wsdl:part element="tns:getVehiclesAverageEnginePowerRequest"
+                   name="getVehiclesAverageEnginePowerRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVehicleResponse">
+        <wsdl:part element="tns:getVehicleResponse" name="getVehicleResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVehiclesSumEnginePowerResponse">
+        <wsdl:part element="tns:getVehiclesSumEnginePowerResponse" name="getVehiclesSumEnginePowerResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="updateVehicleDtoRequest">
+        <wsdl:part element="tns:updateVehicleDtoRequest" name="updateVehicleDtoRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="updateVehicleDtoResponse">
+        <wsdl:part element="tns:updateVehicleDtoResponse" name="updateVehicleDtoResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteVehicleRequest">
+        <wsdl:part element="tns:deleteVehicleRequest" name="deleteVehicleRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVehiclesSumEnginePowerRequest">
+        <wsdl:part element="tns:getVehiclesSumEnginePowerRequest" name="getVehiclesSumEnginePowerRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="createVehicleDtoResponse">
+        <wsdl:part element="tns:createVehicleDtoResponse" name="createVehicleDtoResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteVehicleByTypeRequest">
+        <wsdl:part element="tns:deleteVehicleByTypeRequest" name="deleteVehicleByTypeRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVehiclesAverageEnginePowerResponse">
+        <wsdl:part element="tns:getVehiclesAverageEnginePowerResponse"
+                   name="getVehiclesAverageEnginePowerResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteVehicleResponse">
+        <wsdl:part element="tns:deleteVehicleResponse" name="deleteVehicleResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="deleteVehicleByTypeResponse">
+        <wsdl:part element="tns:deleteVehicleByTypeResponse" name="deleteVehicleByTypeResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getVehicleRequest">
+        <wsdl:part element="tns:getVehicleRequest" name="getVehicleRequest"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="SchemaPort">
+        <wsdl:operation name="createVehicleDto">
+            <wsdl:input message="tns:createVehicleDtoRequest" name="createVehicleDtoRequest"></wsdl:input>
+            <wsdl:output message="tns:createVehicleDtoResponse" name="createVehicleDtoResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVehiclesAverageEnginePower">
+            <wsdl:input message="tns:getVehiclesAverageEnginePowerRequest"
+                        name="getVehiclesAverageEnginePowerRequest"></wsdl:input>
+            <wsdl:output message="tns:getVehiclesAverageEnginePowerResponse"
+                         name="getVehiclesAverageEnginePowerResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVehicle">
+            <wsdl:input message="tns:getVehicleRequest" name="getVehicleRequest"></wsdl:input>
+            <wsdl:output message="tns:getVehicleResponse" name="getVehicleResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVehiclesSumEnginePower">
+            <wsdl:input message="tns:getVehiclesSumEnginePowerRequest"
+                        name="getVehiclesSumEnginePowerRequest"></wsdl:input>
+            <wsdl:output message="tns:getVehiclesSumEnginePowerResponse"
+                         name="getVehiclesSumEnginePowerResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateVehicleDto">
+            <wsdl:input message="tns:updateVehicleDtoRequest" name="updateVehicleDtoRequest"></wsdl:input>
+            <wsdl:output message="tns:updateVehicleDtoResponse" name="updateVehicleDtoResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteVehicle">
+            <wsdl:input message="tns:deleteVehicleRequest" name="deleteVehicleRequest"></wsdl:input>
+            <wsdl:output message="tns:deleteVehicleResponse" name="deleteVehicleResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteVehicleByType">
+            <wsdl:input message="tns:deleteVehicleByTypeRequest" name="deleteVehicleByTypeRequest"></wsdl:input>
+            <wsdl:output message="tns:deleteVehicleByTypeResponse" name="deleteVehicleByTypeResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SchemaPortSoap11" type="tns:SchemaPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="createVehicleDto">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="createVehicleDtoRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createVehicleDtoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVehiclesAverageEnginePower">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getVehiclesAverageEnginePowerRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getVehiclesAverageEnginePowerResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVehicle">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getVehicleRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getVehicleResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getVehiclesSumEnginePower">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getVehiclesSumEnginePowerRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getVehiclesSumEnginePowerResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="updateVehicleDto">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="updateVehicleDtoRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="updateVehicleDtoResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteVehicle">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="deleteVehicleRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteVehicleResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="deleteVehicleByType">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="deleteVehicleByTypeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="deleteVehicleByTypeResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="SchemaPortService">
+        <wsdl:port binding="tns:SchemaPortSoap11" name="SchemaPortSoap11">
+            <soap:address location="http://localhost:9099/api/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
